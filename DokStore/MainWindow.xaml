@@ -1,0 +1,315 @@
+﻿<Window x:Class="DokStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DokStore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="900"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#38405f">
+
+
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" >
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+            </ColumnDefinition>
+            <ColumnDefinition>
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#0E131F" Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+
+
+            <TextBlock Text="DockStore"
+                       Foreground="White"
+                       Grid.Column="0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#kanit"
+                       FontSize="20"
+                       FontWeight="Medium"
+                       />
+
+            <Button Content="Главная"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Medium"
+                        Margin="0,0,0,0"
+                        Grid.Column="5" Click="ButtonMain_Click"
+                        Name="Main">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#kanit-light"/>
+                        <Setter Property="Background" Value="#5156a4"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4a4f96"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="80"
+                                    Height="20"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Content="Выход"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Medium"
+                        Margin="0,0,0,0"
+                        Grid.Column="6" Height="25" VerticalAlignment="Bottom" Click="Button_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#kanit-light"/>
+                        <Setter Property="Background" Value="#b41825"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a21622"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="80"
+                                    Height="20"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </Grid>
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Margin="0,45,0,0">
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Height="70" Source="Asets/DataBaseLogo.png" Margin="25,0,5,0" RenderOptions.BitmapScalingMode="Fant"></Image>
+                    <TextBlock Text="DockStore"
+                           Foreground="White"
+                           FontSize="22"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Kanit"
+                           Margin="0,10,15,0"/>
+                </StackPanel>
+
+                <TextBlock Text="Все"
+                       Foreground="White"
+                       FontSize="27"
+                       FontWeight="Medium"
+                       FontFamily="Fonts/#kanit-light"
+                       Margin="25,15,15,0"/>
+                <TextBlock Text="документы"
+                       Foreground="White"
+                       FontSize="27"
+                       FontWeight="Medium"
+                       FontFamily="Fonts/#kanit-light"
+                       Margin="25,0,15,0"/>
+                <TextBlock Text="в одном месте"
+                       Foreground="White"
+                       FontSize="27"
+                       FontWeight="Medium"
+                       FontFamily="Fonts/#kanit-light"
+                       Margin="25,0,15,0"/>
+                <TextBlock Text="Для начала работы пройдите авторизацию в системе. Если вы пользуетель продуктом в первый раз пройдите регистрацию, или обратитесь к системному спициалисту"
+                       Foreground="White"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       FontFamily="Fonts/#kanit-light"
+                       TextWrapping="Wrap" 
+                       Margin="25,15,15,0"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Авторизация"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Medium"
+                        Margin="25,15,15,0"
+                        Name="ButtonAuth" Click="ButtonAuth_Click_1">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#kanit-light"/>
+                            <Setter Property="Background" Value="#b09107"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#9d8107"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </Button.Style>
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="110"
+                                    Height="30"
+                                    CornerRadius="14"
+                                    Background="{TemplateBinding Background}">
+
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+                <Button Content="Регистрация"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Medium"
+                        Margin="35,15,15,0" Click="Button_Click_1">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#kanit-light"/>
+                            <Setter Property="Background" Value="#5156a4"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4a4f96"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </Button.Style>
+
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="110"
+                                    Height="30"
+                                    CornerRadius="14"
+                                    Background="{TemplateBinding Background}">
+
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="160,-365,-610,85"
+              Panel.ZIndex="-1">
+
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"/>
+            </Grid.RenderTransform>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="-350,250,-255,-250">
+
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#E27C5C"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
+                            Background="#4665E3"
+                            Margin="0,15,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
+                            Background="#364996"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Border Width="700"
+                            Height="35"
+                            Background="#E27C5C"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
+                            Background="#4665E3"
+                            Margin="0,15,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
+                            Background="#364996"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Frame Content="" Name="Farme" HorizontalAlignment="Left" Height="475" VerticalAlignment="Top" Width="900" Grid.Row="1" Grid.ColumnSpan="2" Panel.ZIndex="1" NavigationUIVisibility="Hidden" Visibility="Hidden"/>
+
+
+    </Grid>
+</Window>
